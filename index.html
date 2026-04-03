@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malá cena Velké Verandy 2026</title>
+    <style>
+        :root {
+            --main-green: #2e8b57;
+            --dark-green: #1f5f3d;
+            --accent-red: #c8102e;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f8f8;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 140px;
+        }
+        .title {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .info-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+        }
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: var(--main-green);
+            margin-bottom: 15px;
+        }
+        .red { color: var(--accent-red); font-weight: bold; }
+        .btn {
+            display: inline-block;
+            background: var(--accent-red);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .btn:hover { background: #a00; }
+        .highlight {
+            background: #fff9e6;
+            padding: 20px;
+            border-left: 6px solid var(--main-green);
+            margin: 25px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #222;
+            color: #ccc;
+            margin-top: 50px;
+        }
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logo Malá cena Velké Verandy" class="logo">
+        <h1 class="title">Malá cena Velké Verandy</h1>
+        <p class="subtitle">Lesní kros – Memoriál Jirky Švadleny</p>
+        <p style="font-size:1.8rem; font-weight:bold;">34. ročník</p>
+    </header>
+
+    <div class="info-bar">
+        <strong>Neděle 6. prosince 2026</strong> • Choceň – Velká Veranda • Start intervalový od 10:15
+    </div>
+
+    <div class="container">
+
+        <!-- HLAVNÍ OBSAH -->
+        <div class="main-content">
+            <h2>O závodu</h2>
+            <p><strong>4 300 m</strong> po lesních cestách a pěšinách (z toho cca 400 m asfalt).</p>
+            <p>Kopcovitý profil s převýšením přibližně <strong>200 m</strong>. Trasa je značena fáborky.</p>
+
+            <div class="highlight">
+                <strong>Startovné:</strong> 200 Kč (děti a mládež 100 Kč)
+            </div>
+
+            <h2>Informace pro závodníky</h2>
+            <p>
+                Připravujeme pro vás nový moderní web závodu.<br>
+                <strong>Plnohodnotné přihlášky, startovka, výsledky a další informace</strong> budou k dispozici co nejdříve.
+            </p>
+            <p>Děkujeme za pochopení a těšíme se na vás 6. prosince 2026 na Velké Verandě!</p>
+
+            <a href="#" onclick="alert('Přihlášky budou spuštěny na novém webu. Děkujeme za trpělivost.'); return false;" class="btn">Přihlásit se na závod</a>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <!-- BOX ZÁVOD -->
+            <div class="box">
+                <h3>Závod</h3>
+                <p><strong>Pořadatel:</strong> K.O.B. Choceň</p>
+                <p><strong>Trať:</strong> 4 300 m lesní kros</p>
+                <p><strong>Start:</strong> intervalový od 10:15</p>
+                <p><strong>Místo:</strong> Choceň – Velká Veranda</p>
+            </div>
+
+            <!-- TRAŤ -->
+            <div class="box">
+                <h3>Trasa závodu</h3>
+                <a href="images/trasa.jpg" target="_blank">
+                    <img src="images/trasa.jpg" alt="Mapa trasy Malá cena Velké Verandy" style="width:100%; border-radius:6px; border:1px solid #ddd;">
+                </a>
+                <p style="margin-top:10px; font-size:0.95rem;">
+                    Kopcovitý terén, lesní cesty a pěšiny. Profil trasy viz obrázek.
+                </p>
+            </div>
+
+            <!-- REKORDY + VÍTĚZOVÉ -->
+            <div class="box">
+                <h3>Traťové rekordy</h3>
+                <p><strong>Muži:</strong> [jméno – čas]</p>
+                <p><strong>Ženy:</strong> [jméno – čas]</p>
+
+                <hr style="margin:15px 0;">
+                <h3>Loňští vítězové (2025)</h3>
+                <p><strong>Muži:</strong> [jméno – čas]</p>
+                <p><strong>Ženy:</strong> [jméno – čas]</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Malá cena Velké Verandy 2026</strong> • 34. ročník lesního krosu</p>
+        <p>Pořádá K.O.B. Choceň • Připravujeme nový web závodu</p>
+        <p style="margin-top:15px; font-size:0.9rem;">© 2026 • Všechna práva vyhrazena</p>
+    </footer>
+
+</body>
+</html>
