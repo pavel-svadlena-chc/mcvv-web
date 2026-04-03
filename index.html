@@ -18,10 +18,10 @@
             background: #f8f8f8;
         }
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/hero.jpg') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 120px 20px 80px;
+            padding: 130px 20px 90px;
             position: relative;
         }
         .logo {
@@ -33,78 +33,97 @@
         .title {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
         }
         .subtitle {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .info-bar {
             background: var(--dark-green);
             color: white;
-            padding: 15px 20px;
+            padding: 18px 20px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            font-weight: bold;
         }
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
             display: grid;
-            grid-template-columns: 1fr 340px;
+            grid-template-columns: 1fr 360px;
             gap: 40px;
         }
         .main-content {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
         }
         .box {
             background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
-        h1, h2, h3 {
-            color: var(--main-green);
-            margin-bottom: 15px;
-        }
+        h1, h2, h3 { color: var(--main-green); }
         .red { color: var(--accent-red); font-weight: bold; }
-        .btn {
-            display: inline-block;
-            background: var(--accent-red);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-        .btn:hover { background: #a00; }
         .highlight {
             background: #fff9e6;
-            padding: 20px;
-            border-left: 6px solid var(--main-green);
-            margin: 25px 0;
+            padding: 25px;
+            border-left: 8px solid var(--accent-red);
+            margin: 30px 0;
+            font-size: 1.1rem;
+            border-radius: 6px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1010;
         }
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px 30px;
             background: #222;
             color: #ccc;
-            margin-top: 50px;
+            margin-top: 60px;
         }
-        @media (max-width: 900px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .title { font-size: 2.2rem; }
+        @media (max-width: 920px) {
+            .container { grid-template-columns: 1fr; }
+            .title { font-size: 2.3rem; }
         }
     </style>
 </head>
@@ -114,11 +133,11 @@
         <img src="images/logo.png" alt="Logo Malá cena Velké Verandy" class="logo">
         <h1 class="title">Malá cena Velké Verandy</h1>
         <p class="subtitle">Lesní kros – Memoriál Jirky Švadleny</p>
-        <p style="font-size:1.8rem; font-weight:bold;">34. ročník</p>
+        <p style="font-size:1.9rem; font-weight:bold;">34. ročník</p>
     </header>
 
     <div class="info-bar">
-        <strong>Neděle 6. prosince 2026</strong> • Choceň – Velká Veranda • Start intervalový od 10:15
+        Neděle 6. prosince 2026 • Choceň – Velká Veranda • Intervalový start od 10:15
     </div>
 
     <div class="container">
@@ -130,17 +149,10 @@
             <p>Kopcovitý profil s převýšením přibližně <strong>200 m</strong>. Trasa je značena fáborky.</p>
 
             <div class="highlight">
-                <strong>Startovné:</strong> 200 Kč (děti a mládež 100 Kč)
+                <strong>Připravujeme nový moderní web závodu.</strong><br>
+                Plnohodnotné informace, přihlášky, startovka a výsledky budou brzy k dispozici.<br>
+                Děkujeme za pochopení a těšíme se na vás 6. prosince 2026!
             </div>
-
-            <h2>Informace pro závodníky</h2>
-            <p>
-                Připravujeme pro vás nový moderní web závodu.<br>
-                <strong>Plnohodnotné přihlášky, startovka, výsledky a další informace</strong> budou k dispozici co nejdříve.
-            </p>
-            <p>Děkujeme za pochopení a těšíme se na vás 6. prosince 2026 na Velké Verandě!</p>
-
-            <a href="#" onclick="alert('Přihlášky budou spuštěny na novém webu. Děkujeme za trpělivost.'); return false;" class="btn">Přihlásit se na závod</a>
         </div>
 
         <!-- SIDEBAR -->
@@ -155,37 +167,61 @@
                 <p><strong>Místo:</strong> Choceň – Velká Veranda</p>
             </div>
 
-            <!-- TRAŤ -->
+            <!-- TRASA -->
             <div class="box">
                 <h3>Trasa závodu</h3>
-                <a href="images/trasa.jpg" target="_blank">
-                    <img src="images/trasa.jpg" alt="Mapa trasy Malá cena Velké Verandy" style="width:100%; border-radius:6px; border:1px solid #ddd;">
-                </a>
-                <p style="margin-top:10px; font-size:0.95rem;">
-                    Kopcovitý terén, lesní cesty a pěšiny. Profil trasy viz obrázek.
+                <img id="trasaImg" src="images/trasa.jpg" alt="Mapa trasy Malá cena Velké Verandy" 
+                     style="width:100%; border-radius:8px; border:1px solid #ddd; cursor:pointer;" 
+                     onclick="showModal()">
+                <p style="margin-top:12px; font-size:0.95rem; text-align:center;">
+                    Klikněte pro zvětšení
                 </p>
             </div>
 
-            <!-- REKORDY + VÍTĚZOVÉ -->
+            <!-- REKORDY A VÍTĚZOVÉ -->
             <div class="box">
                 <h3>Traťové rekordy</h3>
-                <p><strong>Muži:</strong> [jméno – čas]</p>
-                <p><strong>Ženy:</strong> [jméno – čas]</p>
+                <p><strong>Muži:</strong> Jan Janů (2018) – 14:45</p>
+                <p><strong>Ženy:</strong> Adéla Vetchá (2018) – 17:28</p>
 
-                <hr style="margin:15px 0;">
+                <hr style="margin:20px 0 15px;">
+                
                 <h3>Loňští vítězové (2025)</h3>
-                <p><strong>Muži:</strong> [jméno – čas]</p>
-                <p><strong>Ženy:</strong> [jméno – čas]</p>
+                <p><strong>Muži:</strong> Jáchym Kovář – 15:10</p>
+                <p><strong>Ženy:</strong> Lucie Šaclová – 20:45</p>
             </div>
 
         </div>
     </div>
 
+    <!-- MODAL PRO ZVĚTŠENÍ TRASY -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal()">&times;</span>
+            <img id="modalImage" src="images/trasa.jpg" alt="Mapa trasy">
+        </div>
+    </div>
+
     <footer>
         <p><strong>Malá cena Velké Verandy 2026</strong> • 34. ročník lesního krosu</p>
-        <p>Pořádá K.O.B. Choceň • Připravujeme nový web závodu</p>
-        <p style="margin-top:15px; font-size:0.9rem;">© 2026 • Všechna práva vyhrazena</p>
+        <p>Pořádá K.O.B. Choceň</p>
+        <p style="margin-top:20px; font-size:0.9rem;">© 2026 • Připravujeme nový web závodu</p>
     </footer>
 
+    <script>
+        function showModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function hideModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        // Zavření modalu kliknutím mimo obrázek
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                hideModal();
+            }
+        }
+    </script>
 </body>
 </html>
