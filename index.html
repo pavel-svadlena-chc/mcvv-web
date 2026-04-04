@@ -248,3 +248,44 @@
             gallery.innerHTML = '';
 
             // ←←← SEM NAHRAĎ názvy svých skutečných fotek
+            const photos = [
+                'images/fotky/foto1.jpg',
+                'images/fotky/foto2.jpg',
+                'images/fotky/foto3.jpg',
+                'images/fotky/foto4.jpg',
+                'images/fotky/foto5.jpg',
+                'images/fotky/foto6.jpg',
+                'images/fotky/foto7.jpg',
+                'images/fotky/foto8.jpg',
+                'images/fotky/foto9.jpg',
+                'images/fotky/foto10.jpg'
+                // přidej všechny názvy souborů, které máš v images/fotky/
+            ];
+
+            // Náhodný výběr 4 fotek
+            const shuffled = photos.sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, 4);
+
+            selected.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = 'Fotka ze závodu Malá cena Velké Verandy';
+                img.loading = "lazy";
+                gallery.appendChild(img);
+            });
+        }
+
+        function showModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function hideModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('modal')) hideModal();
+        }
+
+        window.onload = loadRandomPhotos;
+    </script>
+</body>
+</html>
