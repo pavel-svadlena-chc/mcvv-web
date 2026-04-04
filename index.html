@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malá cena Velké Verandy 2026</title>
+    
+    <!-- Moderní favicon set -->
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <style>
         :root {
             --main-green: #2e8b57;
@@ -67,7 +74,7 @@
             gap: 30px;
         }
         h1, h2, h3 { color: var(--main-green); }
-        .red { color: var(--accent-red); font-weight: bold; }
+
         .highlight {
             background: #fff9e6;
             padding: 25px;
@@ -75,6 +82,25 @@
             margin: 30px 0;
             font-size: 1.1rem;
             border-radius: 6px;
+        }
+
+        /* Grid portrétových fotek */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-top: 25px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 210px;           /* optimální výška pro portréty */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            transition: transform 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.06);
         }
 
         /* Modal pro trasu */
@@ -93,9 +119,6 @@
             position: relative;
             max-width: 100%;
             max-height: 95vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .modal-content img {
             max-width: 100%;
@@ -121,7 +144,6 @@
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
-        .close:hover { background: #eee; }
 
         footer {
             text-align: center;
@@ -134,6 +156,7 @@
         @media (max-width: 920px) {
             .container { grid-template-columns: 1fr; }
             .title { font-size: 2.3rem; }
+            .gallery-grid img { height: 180px; }
         }
     </style>
 </head>
@@ -163,12 +186,15 @@
                 Plnohodnotné informace, přihlášky, startovka a výsledky budou brzy k dispozici.<br>
                 Děkujeme za pochopení a těšíme se na vás 6. prosince 2026!
             </div>
+
+            <!-- GALERIE NÁHODNÝCH FOTEK -->
+            <h3 style="margin-top:35px; color:#2e8b57;">Ze závodu</h3>
+            <div class="gallery-grid" id="gallery"></div>
         </div>
 
         <!-- SIDEBAR -->
         <div class="sidebar">
 
-            <!-- BOX ZÁVOD -->
             <div class="box">
                 <h3>Závod</h3>
                 <p><strong>Pořadatel:</strong> K.O.B. Choceň</p>
@@ -177,10 +203,9 @@
                 <p><strong>Místo:</strong> Choceň – Velká Veranda</p>
             </div>
 
-            <!-- TRASA -->
             <div class="box">
                 <h3>Trasa závodu</h3>
-                <img id="trasaImg" src="images/trasa.jpg" alt="Mapa trasy Malá cena Velké Verandy" 
+                <img id="trasaImg" src="images/trasa.jpg" alt="Mapa trasy" 
                      style="width:100%; border-radius:8px; border:1px solid #ddd; cursor:pointer;" 
                      onclick="showModal()">
                 <p style="margin-top:12px; font-size:0.95rem; text-align:center; color:#555;">
@@ -188,7 +213,6 @@
                 </p>
             </div>
 
-            <!-- REKORDY A VÍTĚZOVÉ -->
             <div class="box">
                 <h3>Traťové rekordy</h3>
                 <p><strong>Muži:</strong> Jan Janů (2018) – 14:45</p>
@@ -204,7 +228,7 @@
         </div>
     </div>
 
-    <!-- MODAL PRO ZVĚTŠENÍ TRASY -->
+    <!-- MODAL -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="hideModal()">×</span>
@@ -219,19 +243,8 @@
     </footer>
 
     <script>
-        function showModal() {
-            document.getElementById('modal').style.display = 'flex';
-        }
-        function hideModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-        // Zavření kliknutím mimo obrázek
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target === modal) {
-                hideModal();
-            }
-        }
-    </script>
-</body>
-</html>
+        function loadRandomPhotos() {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+
+            // ←←← SEM NAHRAĎ názvy svých skutečných fotek
